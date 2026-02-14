@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Для моей жанымки Еркешки ❤️</title>
+
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    color: white;
+    text-align: center;
+    background: url('photo.jpg') no-repeat center center/cover;
+    overflow-x: hidden;
+  }
+
+  /* затемнение */
+  .overlay {
+    background: rgba(0,0,0,0.65);
+    padding: 60px 20px;
+    min-height: 100vh;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Анимация появления */
+  .fade-in {
+    opacity: 0;
+    animation: fadeIn 2s ease forwards;
+  }
+
+  @keyframes fadeIn {
+    to { opacity: 1; }
+  }
+
+  h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+
+  .big-text {
+    max-width: 900px;
+    margin: auto;
+    font-size: 20px;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    animation-delay: 1s;
+  }
+
+  button {
+    padding: 15px 30px;
+    font-size: 18px;
+    background: pink;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: 0.3s;
+  }
+
+  button:hover {
+    transform: scale(1.1);
+  }
+
+  #reasons {
+    display: none;
+    margin-top: 50px;
+    text-align: left;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 18px;
+  }
+
+  .reason {
+    margin: 8px 0;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+  }
+
+  .final {
+    margin-top: 60px;
+    font-size: 24px;
+    font-weight: bold;
+    animation-delay: 2s;
+  }
+
+  /* Сердечки */
+  .heart {
+    position: fixed;
+    top: -10px;
+    font-size: 20px;
+    animation: fall linear forwards;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  @keyframes fall {
+    to {
+      transform: translateY(110vh);
+      opacity: 0;
+    }
+  }
+
+  /* Небольшая подсказка (появится если автозапуск заблокирован) */
+  #tapHint {
+    display: none;
+    margin: 12px auto 0;
+    max-width: 520px;
+    font-size: 14px;
+    opacity: 0.85;
+  }
+</style>
+</head>
+
+<body>
+
+<!-- ✅ Музыка: положи файл music.mp3 рядом с этим HTML -->
+<audio id="bg-music" autoplay loop preload="auto">
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<div class="overlay">
+
+  <h1 class="fade-in">Ерке жаным моя, с Днём рождения! ❤️</h1>
+
+  <div class="big-text fade-in">
+    Еркешка, туган кунынмен, мен саган шын журектен тылек айтам.<br>
+    Сен- моя самая самая лпшка на всю жизнь моя крепость, поддержка, любовь<br>
+    С тобой мне комфортно, всегда комфортно лучшая лучшая кринжуля<br><br>
+
+    Рахмет что поддерживаешь меня всегда что всегда меня любишь, заботишься.<br>
+    Сен мен ушын не простая подруга — ты мой родя, моя жаным, моя помощь и любовь.<br><br>
+
+    Осы 2026 жыл саган коп жаксы зат акелсын красный диплом акелсын бары чики пуки болсын.<br>
+    Я очень ценю тебя. 💖
+  </div>
+
+  <button onclick="showReasons()">Открыть 40 причин 💖</button>
+  <div id="tapHint">Если музыка не включилась — нажми в любое место на странице 💗</div>
+
+  <div id="reasons"></div>
+
+  <div class="final fade-in">
+    Даже когда ты злая - я тебя люблю жаным сол ❤️
+  </div>
+
+</div>
+
+<script>
+  function showReasons() {
+    const reasonsDiv = document.getElementById("reasons");
+    if (reasonsDiv.style.display === "block") return;
+
+    reasonsDiv.style.display = "block";
+
+    const reasons = [
+      "1. Ты невероятно красивая.",
+      "2. Ты моя Еркешка.",
+      "3. С тобой мне комфортно.",
+      "4. Ты всегда меня поддерживаешь.",
+      "5. Ты моя жаным.",
+      "6. Ты добрая.",
+      "7. Ты заботливая.",
+      "8. Ты мое солнце.",
+      "9. Ты умная.",
+      "10. Ты настоящая.",
+      "11. Ты умеешь слушать.",
+      "12. Ты стараешься во всём.",
+      "13. Ты сильная.",
+      "14. Ты нежная.",
+      "15. Ты особенная.",
+      "16. Ты неповторимая.",
+      "17. Ты умеешь прощать.",
+      "18. Ты делаешь мир ярче.",
+      "19. Ты светлая душой.",
+      "20. Ты лучшая подруга.",
+      "21. Ты верная.",
+      "22. Ты честная.",
+      "23. Ты понимающая.",
+      "24. Ты стильная.",
+      "25. Ты талантливая.",
+      "26. Ты внимательная.",
+      "27. Ты смешишь меня даже в плохой день.",
+      "28. Ты делаешь меня счастливым.",
+      "29. Ты заботишься обо мне.",
+      "30. Ты умеешь радоваться мелочам.",
+      "31. Ты поддерживаешь мечты.",
+      "32. Ты невероятно милая.",
+      "33. Ты сильнее, чем думаешь.",
+      "34. Ты искренняя.",
+      "35. Ты умеешь удивлять.",
+      "36. Ты умеешь любить.",
+      "37. Ты терпеливая.",
+      "38. Ты харизматичная.",
+      "39. Ты вдохновляешь становиться лучше.",
+      "40. Потому что ты — моя Еркешка. И этого уже достаточно."
+    ];
+
+    reasons.forEach((text, index) => {
+      const p = document.createElement("div");
+      p.className = "reason";
+      p.style.animationDelay = (index * 0.2) + "s";
+      p.textContent = text;
+      reasonsDiv.appendChild(p);
+    });
+  }
+
+  /* Падающие сердечки */
+  function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 5000);
+  }
+  setInterval(createHeart, 300);
+
+  /* ✅ Автовоспроизведение музыки (если браузер блокирует — включится при первом клике) */
+  const music = document.getElementById("bg-music");
+  const tapHint = document.getElementById("tapHint");
+
+  function enableMusicOnFirstClick() {
+    document.addEventListener("click", () => {
+      music.play().catch(() => {});
+      tapHint.style.display = "none";
+    }, { once: true });
+  }
+
+  window.addEventListener("load", () => {
+    const playPromise = music.play();
+
+    if (playPromise !== undefined) {
+      playPromise.catch(() => {
+        // Автозапуск заблокирован — покажем подсказку и включим по клику
+        tapHint.style.display = "block";
+        enableMusicOnFirstClick();
+      });
+    }
+  });
+</script>
+
+</body>
+</html>
